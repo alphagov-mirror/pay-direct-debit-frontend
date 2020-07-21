@@ -68,14 +68,6 @@ pipeline {
         deployEcs("directdebit-frontend")
       }
     }
-    stage('Smoke Tests') {
-      when {
-        branch 'master'
-      }
-      steps {
-        runDirectDebitSmokeTest()
-      }
-    }
     stage('Complete') {
       failFast true
       parallel {
